@@ -17,5 +17,5 @@ def lambda_handler(event, context):
     s3_object = s3_client.get_object(Key=key, Bucket=bucket)
     file_content = s3_object['Body'].read().decode('utf-8')
 
-    data = pd.readCsv(StringIO(file_content))
+    data = pd.read_csv(StringIO(file_content))
     print(data)
