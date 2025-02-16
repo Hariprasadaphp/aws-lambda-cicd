@@ -10,8 +10,8 @@ def lambda_handler(event, context):
     response = requests.get("https://amazon.com")
     print(response.text)
 
-    bucket = event['Records'][0]['bucket']['name']
-    key = event['Records'][0]['object']['key']
+    bucket = event['Records'][0]['s3']['bucket']['name']
+    key = event['Records'][0]['s3']['object']['key']
 
     s3_client = boto3.client('s3')
     s3_object = s3_client.get_object(Key=key, Bucket=bucket)
