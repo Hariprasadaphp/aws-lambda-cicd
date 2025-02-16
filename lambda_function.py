@@ -8,7 +8,7 @@ def lambda_handler(event, context):
     print('event ->', event)
 
     response = requests.get("https://amazon.com")
-    print(response.text())
+    print(response.text)
 
     bucket = event['Records'][0]['bucket']['name']
     key = event['Records'][0]['object']['key']
