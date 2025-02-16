@@ -20,6 +20,3 @@ phases:
       - echo "Updating Lambda function via S3..."
       - aws lambda update-function-code --function-name aws-lambda-cicd --s3-bucket aws-github-cicd-code-dump --s3-key deployment_package.zip
       - echo "Deployment complete!"
-      - echo "Start Testing"
-      - aws s3 cp store_data.csv s3://lambda-s3-hari/raw/
-      - echo "Test file uploaded to s3 bucket"
